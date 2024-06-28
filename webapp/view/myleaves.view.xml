@@ -1,0 +1,66 @@
+<mvc:View
+    controllerName="leaverequestui5.controller.myleaves"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+
+        <Text class="headingml" text="My Leaves"></Text>
+
+            <Table
+                id="leaveTable"
+                inset="false"
+                items="{
+            path: '/Leaves'
+           
+        }"
+            >
+                <columns>
+                    <Column width="12em">
+                        <Text text="ID" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="employeeId" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <Text text="startDate" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                        hAlign="Center"
+                    >
+                        <Text text="endDate" />
+                    </Column>
+                    <Column hAlign="End">
+                        <Text text="description" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Middle">
+                        <cells>
+                            <ObjectIdentifier title="{ID}" />
+                            <Text text="{employeeId}" />
+                            <Text text="{startDate}" />
+                            <Text text="{endDate}" />
+                            <Text text="{description}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

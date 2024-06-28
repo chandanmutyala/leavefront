@@ -1,0 +1,241 @@
+<mvc:View
+    controllerName="leaverequestui5.controller.ApplyLeave"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:u="sap.ui.unified"
+    xmlns:tnt="sap.tnt"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:main="sap.ui.webc.main"
+    xmlns:fiori="sap.ui.webc.fiori"
+    height="100%"
+    xmlns="sap.m"
+>
+    <Page>
+        <content>
+            <tnt:ToolHeader
+                id="shellLikeToolHeader"
+                class="sapUiTinyMargin"
+            >
+                <Button
+                    icon="sap-icon://menu2"
+                    type="Transparent"
+                    tooltip="Menu"
+                    press=".onCollapseExpandPress"
+                >
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="NeverOverflow" />
+                    </layoutData>
+                </Button>
+                <Image
+                    src="../assets/Logo CROP.jpg"
+                    class="logo"
+                    decorative="false"
+                    press="onLogoPressed"
+                    tooltip="SAP Logo"
+                >
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="NeverOverflow" />
+                    </layoutData>
+                </Image>
+                <Title
+                    text="LeaveNest"
+                    wrapping="false"
+                    id="productName"
+                >
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="Disappear" />
+                    </layoutData>
+                </Title>
+
+                <ToolbarSpacer />
+                <Title
+                    class="cmp"
+                    text="C&amp;Y TECHNOLOGIES"
+                />
+                <ToolbarSpacer id="spacer">
+                    <layoutData>
+                        <OverflowToolbarLayoutData
+                            priority="Low"
+                            group="1"
+                        />
+                    </layoutData>
+                </ToolbarSpacer>
+                <Button
+                    visible="false"
+                    icon="sap-icon://search"
+                    type="Transparent"
+                    id="searchButton"
+                    tooltip="Search"
+                />
+
+                <Button
+                    icon="sap-icon://bell"
+                    type="Transparent"
+                    tooltip="Notification"
+                >
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="NeverOverflow" />
+                    </layoutData>
+                </Button>
+                <tnt:ToolHeaderUtilitySeparator />
+                <ToolbarSpacer width="1.125rem" />
+                <Avatar
+                    src="test-resources/sap/tnt/images/Woman_avatar_01.png"
+                    displaySize="XS"
+                    press=".onAvatarPressed"
+                    tooltip="Profile"
+                >
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="NeverOverflow" />
+                    </layoutData>
+                </Avatar>
+            </tnt:ToolHeader>
+            <tnt:ToolHeader
+                id="shellLikeToolHeaderOnlyMandatoryControls"
+                class="sapUiTinyMargin"
+            >
+                <Title
+                    text="Hello User👋 "
+                    wrapping="false"
+                >
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="Disappear" />
+                    </layoutData>
+                </Title>
+                <ToolbarSpacer />
+            </tnt:ToolHeader>
+
+            <Panel>
+                <VBox class="sapUiSmallMargin">
+                    <f:SimpleForm
+                        id="SimpleFormChange354wideDual"
+                        editable="true"
+                        layout="ResponsiveGridLayout"
+                        title="Leave Request Form"
+                        labelSpanXL="4"
+                        labelSpanL="3"
+                        labelSpanM="4"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="4"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="2"
+                        columnsL="1"
+                        columnsM="1"
+                        singleContainerFullSize="false"
+                    >
+                        <f:content>
+                            <Label text="Employee ID" />
+                            <Input
+                                id="employeeId"
+                                value="{employeeId}"
+                            />
+                            <Label text="Start Date" />
+                            <DatePicker
+                                id="startDate"
+                                change="handleChange"
+                                class="sapUiSmallMarginBottom"
+                                showFooter="true"
+                            />
+                            <Label text="End Date" />
+                            <DatePicker
+                                id="endDate"
+                                change="handleChange"
+                                class="sapUiSmallMarginBottom"
+                                showFooter="true"
+                            />
+ 
+                            <Label text="Leave Type" />
+                            <Select
+                                id="country"
+                                selectedKey="{Country}"
+                            >
+                                <items>
+                                    <core:Item
+                                        text="Sick Leave"
+                                        key="Sick Leave"
+                                    />
+                                    <core:Item
+                                        text="Casual Leave"
+                                        key="Casual Leave"
+                                    />
+                                    <core:Item
+                                        text="paid Leave"
+                                        key="paid Leave"
+                                    />
+                                </items>
+                            </Select>
+                            <Label text="Description" />
+                            <Input
+                                id="description"
+                                value="{}"
+                            />
+                            
+                            <Label text="Upload File" />
+ 
+                            <l:VerticalLayout>
+                                <u:FileUploader
+                                    id="fileUploader"
+                                    name="myFileUpload"
+                                    uploadUrl="upload/"
+                                    tooltip="Upload your file to the local server"
+                                    uploadComplete="handleUploadComplete"
+                                />
+                                <Button
+                                    text="Upload File"
+                                    press="handleUploadPress"
+                                />
+                            </l:VerticalLayout>
+                        </f:content>
+                             
+                    </f:SimpleForm>
+             
+                </VBox>
+                <!-- <VBox>
+                    <Label text="Employee ID" />
+                    <Input id="employeeId" />
+                    <Label text="Start Date" />
+                    <DatePicker id="startDate" />
+                    <Label text="End Date" />
+                    <DatePicker id="endDate" />
+                    <Label text="Description" />
+                    <TextArea id="description" />
+                    <Button
+                        text="Apply Leave"
+                        press="onApplyLeave"
+                    />
+                    <Button
+                        text="Leave Balance"
+                        press="onLeaveBalance"
+                    />
+                    <Text
+                        id="leaveBalanceText"
+                        text="Remaining Leaves: "
+                    />
+                </VBox> -->
+                <HBox
+                    justifyContent="Center"
+                    class="sapUiSmallMargin"
+                >
+                    <Button
+                        width="100px"
+                        text="Submit"
+                        press="onApplyLeave"
+                    />
+                    <!-- <Button
+                        width="100px"
+                        text="Cancel"
+                    /> --><Button
+                        text="Leave Balance"
+                        press="onLeaveBalance"
+                    />
+                </HBox>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

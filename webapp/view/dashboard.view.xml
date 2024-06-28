@@ -1,0 +1,96 @@
+
+<mvc:View controllerName="leaverequestui5.controller.dashboard"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:tnt="sap.tnt"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns="sap.m">
+ <html:link rel="stylesheet" type="text/css" href="css/style.css"/>
+       <Page>
+        <content>
+        <tnt:ToolHeader id="shellLikeToolHeader" class="sapUiTinyMargin">
+            <Button icon="sap-icon://menu2" type="Transparent" tooltip="Menu" press=".onCollapseExpandPress">
+                <layoutData>
+                    <OverflowToolbarLayoutData priority="NeverOverflow"/>
+                </layoutData>
+            </Button>
+            <Image src="../assets/Logo CROP.jpg"  class="logo"  decorative="false" press="onLogoPressed" tooltip="SAP Logo">
+                <layoutData>
+                    <OverflowToolbarLayoutData priority="NeverOverflow"/>
+                </layoutData>
+            </Image>
+            <Title text="LeaveNest" wrapping="false" id="productName">
+                <layoutData>
+                    <OverflowToolbarLayoutData priority="Disappear"/>
+                </layoutData>
+            </Title>
+           
+            <ToolbarSpacer />
+            <Title class="cmp" text="C&amp;Y TECHNOLOGIES"></Title>
+            <ToolbarSpacer id="spacer">
+                <layoutData>
+                    <OverflowToolbarLayoutData priority="Low" group="1"/>
+                </layoutData>
+            </ToolbarSpacer>
+            <Button visible="false" icon="sap-icon://search" type="Transparent" id="searchButton" tooltip="Search"/>
+           
+            <Button icon="sap-icon://bell" type="Transparent" tooltip="Notification">
+                <layoutData>
+                    <OverflowToolbarLayoutData priority="NeverOverflow"/>
+                </layoutData>
+            </Button>
+            <tnt:ToolHeaderUtilitySeparator/>
+            <ToolbarSpacer width="1.125rem"/>
+            <Avatar src="test-resources/sap/tnt/images/Woman_avatar_01.png" displaySize="XS" press=".onAvatarPressed" tooltip="Profile">
+                <layoutData>
+                    <OverflowToolbarLayoutData priority="NeverOverflow"/>
+                </layoutData>
+            </Avatar>
+        </tnt:ToolHeader>
+        <tnt:ToolHeader id="shellLikeToolHeaderOnlyMandatoryControls" class="sapUiTinyMargin">
+           
+            <Title text="Hello User, Good Morning! " wrapping="false">
+                <layoutData>
+                    <OverflowToolbarLayoutData priority="Disappear"/>
+                </layoutData>
+            </Title>
+            <ToolbarSpacer />
+           
+        </tnt:ToolHeader>
+       
+   
+     <Panel  class="panel1">
+    <GenericTile id="myTile" class="sapUiTinyMarginBegin  sapUiTinyMarginTop tileLayout tile" header="Apply Leave"   press="onApplyLeave">
+        <TileContent>
+            <NumericContent value="1762"  withMargin="false" />
+        </TileContent>
+    </GenericTile>
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tile" header="My Leaves"  press="myleavespress">
+        <TileContent >
+            <NumericContent value="1762"  withMargin="false" />
+        </TileContent>
+    </GenericTile>
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tile" header="Holidays"  press="pressHolidays">
+        <TileContent >
+            <NumericContent value="1762"  withMargin="false" />
+        </TileContent>
+    </GenericTile>
+    <GenericTile class="sapUiTinyMarginBegin  sapUiTinyMarginTop tileLayout tile tile1" header="Celebrations"  press="press">
+        <TileContent >
+            <NumericContent value="1762"  withMargin="false" />
+        </TileContent>
+    </GenericTile>
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tile" header="Leave Policies"  press="pressLeavePolicy">
+        <TileContent >
+            <NumericContent value="1762"  withMargin="false" />
+        </TileContent>
+    </GenericTile>
+    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tile" header="Team Calendar"  press="press">
+        <TileContent >
+            <NumericContent value="1762" withMargin="false" />
+        </TileContent>
+    </GenericTile>
+     </Panel>
+       </content>
+    </Page>
+</mvc:View>
+ 

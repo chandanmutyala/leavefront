@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="leavesrv" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Leaves" EntityType="leavesrv.Leaves"/>
+                <EntitySet Name="Employees" EntityType="leavesrv.Employees"/>
+                <ActionImport Name="applyLeave" Action="leavesrv.applyLeave"/>
+                <ActionImport Name="getLeaveBalance" Action="leavesrv.getLeaveBalance"/>
+            </EntityContainer>
+            <EntityType Name="Leaves">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="employeeId" Type="Edm.Int32"/>
+                <Property Name="startDate" Type="Edm.Date"/>
+                <Property Name="endDate" Type="Edm.Date"/>
+                <Property Name="description" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="Employees">
+                <Key>
+                    <PropertyRef Name="EmployeeId"/>
+                </Key>
+                <Property Name="EmployeeId" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="firstName" Type="Edm.String"/>
+                <Property Name="lastName" Type="Edm.String"/>
+                <Property Name="employeeRole" Type="Edm.String"/>
+                <Property Name="emailId" Type="Edm.String"/>
+                <Property Name="phoneNumber" Type="Edm.Int32"/>
+                <Property Name="totalLeaves" Type="Edm.Int32"/>
+            </EntityType>
+            <Action Name="applyLeave" IsBound="false">
+                <Parameter Name="employeeId" Type="Edm.Int32"/>
+                <Parameter Name="startDate" Type="Edm.Date"/>
+                <Parameter Name="endDate" Type="Edm.Date"/>
+                <Parameter Name="description" Type="Edm.String"/>
+                <ReturnType Type="Edm.Boolean"/>
+            </Action>
+            <Action Name="getLeaveBalance" IsBound="false">
+                <Parameter Name="employeeId" Type="Edm.Int32"/>
+                <ReturnType Type="Edm.Int32"/>
+            </Action>
+            <Annotations Target="leavesrv.Leaves/ID">
+                <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
