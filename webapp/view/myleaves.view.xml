@@ -1,52 +1,32 @@
 <mvc:View
     controllerName="leaverequestui5.controller.myleaves"
-    xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
+    xmlns:l="sap.ui.layout"
     xmlns="sap.m"
 >
-    <Page
-        id="page"
-        title="{i18n>title}"
-    >
+    <Page id="page" title="{i18n>title}">
         <content>
-
-        <Text class="headingml" text="My Leaves"></Text>
-
-            <Table
-                id="leaveTable"
-                inset="false"
-                items="{
-            path: '/Leaves'
-           
-        }"
-            >
+            <Text class="headingml" text="My Leaves" />
+            <Table id="leaveTable" inset="false" items="{ path: '/Leaves' }">
                 <columns>
                     <Column width="12em">
                         <Text text="ID" />
                     </Column>
-                    <Column
-                        minScreenWidth="Tablet"
-                        demandPopin="true"
-                    >
-                        <Text text="employeeId" />
+                    <Column minScreenWidth="Tablet" demandPopin="true">
+                        <Text text="Employee ID" />
                     </Column>
-                    <Column
-                        minScreenWidth="Desktop"
-                        demandPopin="true"
-                        hAlign="End"
-                    >
-                        <Text text="startDate" />
+                    <Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+                        <Text text="Start Date" />
                     </Column>
-                    <Column
-                        minScreenWidth="Desktop"
-                        demandPopin="true"
-                        hAlign="Center"
-                    >
-                        <Text text="endDate" />
+                    <Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+                        <Text text="End Date" />
+                    </Column>
+                    <Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+                        <Text text="Status" />
                     </Column>
                     <Column hAlign="End">
-                        <Text text="description" />
+                        <Text text="Description" />
                     </Column>
                 </columns>
                 <items>
@@ -56,6 +36,7 @@
                             <Text text="{employeeId}" />
                             <Text text="{startDate}" />
                             <Text text="{endDate}" />
+                            <Text text="{status}" />
                             <Text text="{description}" />
                         </cells>
                     </ColumnListItem>

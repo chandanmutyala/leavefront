@@ -131,6 +131,13 @@
           "target": [
             "TargetLeavePolicy"
           ]
+        },
+        {
+          "name": "RouteManagerboard",
+          "pattern": "managerboard",
+          "target": [
+            "TargetManagerBoard"
+          ]
         }
        
       ],
@@ -169,6 +176,13 @@
           "clearControlAggregation": false,
           "viewId": "LeavePolicies",
           "viewName": "LeavePolicies"
+        },
+        "TargetManagerBoard": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "managerboard",
+          "viewName": "managerboard"
         }
         
       }

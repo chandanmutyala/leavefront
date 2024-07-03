@@ -25,7 +25,12 @@ function (Controller) {
         pressLeavePolicy:function(){
             var route1 = this.getOwnerComponent().getRouter();
             route1.navTo("RouteLeavePolicy")
+        },
+        navToManager:function(){
+            var route1 = this.getOwnerComponent().getRouter();
+            route1.navTo("RouteManagerboard")
         }
+        
         
     });
 });

@@ -1,0 +1,74 @@
+<mvc:View
+    controllerName="leaverequestui5.controller.managerboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page title="Manager Dashboard">
+        <content>
+            <Table
+                id="leaveTable"
+                inset="false"
+                items="{
+                    path: '/Leaves'
+                }"
+            >
+                <columns>
+                    <Column width="12em">
+                        <Text text="ID" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="employeeId" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <Text text="startDate" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                        hAlign="Center"
+                    >
+                        <Text text="endDate" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                        hAlign="Center"
+                    >
+                        <Text text="status" />
+                    </Column>
+                    <Column hAlign="End">
+                        <Text text="description" />
+                    </Column>
+                    <Column hAlign="Center">
+                        <Text text="Actions" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Middle">
+                        <cells>
+                            <ObjectIdentifier title="{ID}" />
+                            <Text text="{employeeId}" />
+                            <Text text="{startDate}" />
+                            <Text text="{endDate}" />
+                            <Text text="{status}" />
+                            <Text text="{description}" />
+                            <HBox>
+                                <Button text="Approve"  type="Accept" press="onApproveLeave" />
+                                <Button text="Reject" type="Reject" press="onRejectLeave" />
+                            </HBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

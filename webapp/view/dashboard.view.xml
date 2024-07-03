@@ -32,6 +32,7 @@
                 </layoutData>
             </ToolbarSpacer>
             <Button visible="false" icon="sap-icon://search" type="Transparent" id="searchButton" tooltip="Search"/>
+            <Button visible="true" text="Manager"  id="managerButton" press="navToManager"/>
            
             <Button icon="sap-icon://bell" type="Transparent" tooltip="Notification">
                 <layoutData>
